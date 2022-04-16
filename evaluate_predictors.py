@@ -2,8 +2,9 @@ from GShare import GShare
 from GSelect import GSelect
 from Static import Static
 from Tournament import Tournament
+from QTable import QTable
 
-predictors = [Static(0), Static(1), GShare(2, 6, 6), GSelect(2, 6, 6), Tournament(2, 6, 6)]
+predictors = [QTable(2, 6, 6)]#[Static(0), Static(1), GShare(2, 6, 6), GSelect(2, 6, 6), Tournament(2, 6, 6), QTable(2, 6, 6)]
 predictor_results = {}
 
 for predictor in predictors:
