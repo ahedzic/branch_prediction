@@ -4,8 +4,8 @@ from Static import Static
 from Tournament import Tournament
 from QTable import QTable
 
-predictors = [Static(0), Static(1)]#[Static(0), Static(1), GShare(2, 6, 4), GSelect(2, 6, 4), Tournament(2, 6, 4), QTable(2, 6, 4)]
-workloads = ["long_mobile_1.trace", "gcc-8M.txt"]
+predictors = [Static(0), Static(1), GShare(2, 6, 6), GSelect(2, 6, 6), Tournament(2, 6, 4), QTable(2, 6, 6)]
+workloads = ["long_server_1.trace", "long_mobile_1.trace", "gcc-10K.txt", "gcc-8M.txt"]
 predictor_results = {}
 
 for workload in workloads:
