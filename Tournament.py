@@ -5,7 +5,7 @@ class Tournament:
         self.counter_bits = counter_bits
         self.address_bits = address_bits
         self.global_bits = global_bits
-        self.history_size = 2 ** address_bits
+        self.history_size = 2 ** global_bits
         self.local_history_table = [Counter(counter_bits, 0) for x in range(self.history_size)]
         self.global_history_table = [Counter(counter_bits, 0) for x in range(self.history_size)]
         self.global_register = [0] * global_bits

@@ -11,9 +11,9 @@ class QTable:
         self.counter_bits = counter_bits
         self.address_bits = address_bits
         self.global_bits = global_bits
-        self.history_size = 2 ** address_bits
+        self.history_size = 2 ** global_bits
         self.q_table = np.zeros([self.history_size, 2])
-        self.global_register = [0] * address_bits
+        self.global_register = [0] * global_bits
         self.old_value = None
         self.last_action = None
         self.last_index = None
@@ -26,8 +26,7 @@ class QTable:
         for x in range(self.global_bits):
             global_value += (2 ** x) * self.global_register[x]
 
-        table_index = (address ^ global_value) % self.history_size
-        #table_index = ((address * (2 ** self.address_bits)) + global_value) % self.history_size
+        table_index = ((address * (2 ** self.address_bits)) + global_value) % self.history_size
 
         # Update QTable from last prediction
         if self.old_value != None:
